@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 import mdx from 'vite-plugin-mdx'
 import pages from 'vite-plugin-react-pages'
 
-module.exports = defineConfig({
+export default defineConfig({
   plugins: [
     react(),
     mdx(),

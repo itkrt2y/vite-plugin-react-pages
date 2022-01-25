@@ -1,12 +1,11 @@
-import type { UserConfig } from 'vite'
+import { defineConfig } from 'vite'
 import * as path from 'path'
 
 import react from '@vitejs/plugin-react'
 import mdx from 'vite-plugin-mdx'
 import pages, { DefaultPageStrategy } from 'vite-plugin-react-pages'
 
-module.exports = {
-  jsx: 'react',
+export default defineConfig({
   plugins: [
     react(),
     mdx(),
@@ -73,4 +72,4 @@ module.exports = {
     noExternal: ['my-button', 'my-card'],
   },
   minify: false,
-} as UserConfig
+})

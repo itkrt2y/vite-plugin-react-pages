@@ -1,11 +1,10 @@
-import type { UserConfig } from 'vite'
+import { defineConfig } from 'vite'
 import * as path from 'path'
 import react from '@vitejs/plugin-react'
 import mdx from 'vite-plugin-mdx'
 import pages, { DefaultPageStrategy } from 'vite-plugin-react-pages'
 
-module.exports = {
-  jsx: 'react',
+export default defineConfig({
   plugins: [
     react(),
     mdx(),
@@ -28,8 +27,7 @@ module.exports = {
               runtimeDataPaths[demoPath] = absolute
               const staticData = api.getStaticData(pageId)
               staticData[demoPath] = await helpers.extractStaticData(file)
-              if (!staticData.title)
-                staticData.title = `${componentName} Title`
+              if (!staticData.title) staticData.title = `${componentName} Title`
             }
           )
 
@@ -62,4 +60,4 @@ module.exports = {
       'my-lib': '/src',
     },
   },
-} as UserConfig
+})
